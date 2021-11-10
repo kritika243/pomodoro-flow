@@ -3,6 +3,7 @@ import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css'
 import PauseBtn from './PauseBtn'
 import PlayBtn from './PlayBtn'
+import SettingsBtn from './SettingsBtn'
 
 const color1 = '#ffb30f'
 const color2 = '#96cdff'
@@ -26,6 +27,9 @@ const Timer = () => {
       <div style={{ marginTop: '20px' }}>
         <PlayBtn />
         <PauseBtn />
+      </div>
+      <div style={{ marginTop: '20px' }}>
+        <SettingsBtn />
       </div>
     </>
   )
