@@ -36,4 +36,8 @@ button.with-text svg {
 
 label {
   display: block;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  text-transform: capitalize;
+  font-size: 1.2rem;
 }
