@@ -3,6 +3,7 @@ import ReactSlider from 'react-slider'
 import { useContext } from 'react'
 import SettingsContext from './SettingsContext'
 import './slider.css'
+import BackBtn from './BackBtn'
 
 const Controls = () => {
   const controlsInfo = useContext(SettingsContext)
@@ -29,6 +30,9 @@ const Controls = () => {
         min={1}
         max={120}
       />
+      <div style={{ textAlign: 'center', marginTop: '30px' }}>
+        <BackBtn onClick={() => controlsInfo.setShowControls(false)} />
+      </div>
     </div>
   )
 }

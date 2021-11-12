@@ -5,7 +5,7 @@ import SettingsContext from './SettingsContext'
 import Timer from './Timer'
 
 function App() {
-  const [showControls, setShowControls] = useState(true)
+  const [showControls, setShowControls] = useState(false)
   const [workMinutes, setWorkMinutes] = useState(45)
   const [breakMinutes, setBreakMinutes] = useState(15)
   return (
@@ -16,6 +16,8 @@ function App() {
           breakMinutes,
           setWorkMinutes,
           setBreakMinutes,
+          showControls,
+          setShowControls,
         }}
       >
         {showControls ? <Controls /> : <Timer />}
