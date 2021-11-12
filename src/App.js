@@ -6,13 +6,16 @@ import Timer from './Timer'
 
 function App() {
   const [showControls, setShowControls] = useState(true)
-
+  const [workMinutes, setWorkMinutes] = useState(45)
+  const [breakMinutes, setBreakMinutes] = useState(15)
   return (
     <main>
       <SettingsContext.Provider
         value={{
-          workMinutes: 45,
-          breakMinutes: 15,
+          workMinutes,
+          breakMinutes,
+          setWorkMinutes,
+          setBreakMinutes,
         }}
       >
         {showControls ? <Controls /> : <Timer />}

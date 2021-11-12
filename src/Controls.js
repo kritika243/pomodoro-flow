@@ -14,6 +14,7 @@ const Controls = () => {
         thumbClassName={'thumb'}
         trackClassName={'track'}
         value={controlsInfo.workMinutes}
+        onChange={(newValue) => controlsInfo.setWorkMinutes(newValue)}
         min={1}
         max={120}
       />
@@ -24,6 +25,7 @@ const Controls = () => {
         thumbClassName={'thumb'}
         trackClassName={'track'}
         value={controlsInfo.breakMinutes}
+        onChange={(newValue) => controlsInfo.setBreakMinutes(newValue)}
         min={1}
         max={120}
       />
