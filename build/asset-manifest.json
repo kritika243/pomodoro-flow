@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/pomodoro-flow/static/css/main.f86959a2.chunk.css",
+    "main.js": "/pomodoro-flow/static/js/main.adc9fba7.chunk.js",
+    "main.js.map": "/pomodoro-flow/static/js/main.adc9fba7.chunk.js.map",
+    "runtime-main.js": "/pomodoro-flow/static/js/runtime-main.f2dd0228.js",
+    "runtime-main.js.map": "/pomodoro-flow/static/js/runtime-main.f2dd0228.js.map",
+    "static/css/2.6c0f60ba.chunk.css": "/pomodoro-flow/static/css/2.6c0f60ba.chunk.css",
+    "static/js/2.98d608a7.chunk.js": "/pomodoro-flow/static/js/2.98d608a7.chunk.js",
+    "static/js/2.98d608a7.chunk.js.map": "/pomodoro-flow/static/js/2.98d608a7.chunk.js.map",
+    "static/js/3.e9c788a6.chunk.js": "/pomodoro-flow/static/js/3.e9c788a6.chunk.js",
+    "static/js/3.e9c788a6.chunk.js.map": "/pomodoro-flow/static/js/3.e9c788a6.chunk.js.map",
+    "index.html": "/pomodoro-flow/index.html",
+    "static/css/2.6c0f60ba.chunk.css.map": "/pomodoro-flow/static/css/2.6c0f60ba.chunk.css.map",
+    "static/css/main.f86959a2.chunk.css.map": "/pomodoro-flow/static/css/main.f86959a2.chunk.css.map",
+    "static/js/2.98d608a7.chunk.js.LICENSE.txt": "/pomodoro-flow/static/js/2.98d608a7.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f2dd0228.js",
+    "static/css/2.6c0f60ba.chunk.css",
+    "static/js/2.98d608a7.chunk.js",
+    "static/css/main.f86959a2.chunk.css",
+    "static/js/main.adc9fba7.chunk.js"
+  ]
+}
