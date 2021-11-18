@@ -12,7 +12,7 @@ const color2 = '#96cdff'
 
 const Timer = () => {
   const controlsInfo = useContext(SettingsContext)
-  const [isPaused, setIsPaused] = useState(false)
+  const [isPaused, setIsPaused] = useState(true)
   const [mode, setMode] = useState('work') // work / break / null
   const [secondsLeft, setSecondsLeft] = useState(0)
 
@@ -21,36 +21,38 @@ const Timer = () => {
   const modeRef = useRef(mode)
 
   function tick() {
-    secondsLeftRef.current = secondsLeftRef.current - 1
-    setSecondsLeft(secondsLeftRef.current - 1)
-  }
-
-  function switchMode() {
-    const nextMode = modeRef === 'work' ? 'break' : 'work'
-    const nextSeconds =
-      nextMode === 'work'
-        ? controlsInfo.workMinutes * 60
-        : controlsInfo.breakMinutes * 60
-    setMode(nextMode)
-    modeRef.current = nextMode
-    setSecondsLeft(nextSeconds)
-    secondsLeftRef.current = nextSeconds
-  }
-
-  function initTimer() {
-    setSecondsLeft(controlsInfo.workMinutes * 60)
+    secondsLeftRef.current--
+    setSecondsLeft(secondsLeftRef.current)
   }
 
   useEffect(() => {
-    initTimer()
+    function switchMode() {
+      const nextMode = modeRef.current === 'work' ? 'break' : 'work'
+      const nextSeconds =
+        (nextMode === 'work'
+          ? controlsInfo.workMinutes
+          : controlsInfo.breakMinutes) * 60
+
+      setMode(nextMode)
+      modeRef.current = nextMode
+
+      setSecondsLeft(nextSeconds)
+      secondsLeftRef.current = nextSeconds
+    }
+
+    secondsLeftRef.current = controlsInfo.workMinutes * 60
+    setSecondsLeft(secondsLeftRef.current)
 
     const interval = setInterval(() => {
-      if (isPausedRef.current) return
+      if (isPausedRef.current) {
+        return
+      }
       if (secondsLeftRef.current === 0) {
         return switchMode()
       }
+
       tick()
-    }, 1000)
+    }, 10)
 
     return () => clearInterval(interval)
   }, [controlsInfo])
@@ -64,7 +66,6 @@ const Timer = () => {
   const minutes = Math.floor(secondsLeft / 60)
   let seconds = secondsLeft % 60
   if (seconds < 10) seconds = '0' + seconds
-
   return (
     <>
       <div>
@@ -79,7 +80,21 @@ const Timer = () => {
         />
       </div>
       <div style={{ marginTop: '20px' }}>
-        {isPaused ? <PlayBtn /> : <PauseBtn />}
+        {isPaused ? (
+          <PlayBtn
+            onClick={() => {
+              setIsPaused(false)
+              isPausedRef.current = false
+            }}
+          />
+        ) : (
+          <PauseBtn
+            onClick={() => {
+              setIsPaused(true)
+              isPausedRef.current = true
+            }}
+          />
+        )}
       </div>
       <div style={{ marginTop: '20px' }}>
         <SettingsBtn
