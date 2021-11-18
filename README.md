@@ -1,6 +1,9 @@
-# PomodoroFlow
+# Pomodoro Flow
 
-To help you focus better
+### To help you focus better
+
+<br/>
+<img src="https://github.com/kritika243/pomodoro-flow/blob/main/public/showcase.png" />
 
 ## Getting Started with Create React App
 
