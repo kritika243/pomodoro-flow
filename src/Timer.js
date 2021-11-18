@@ -52,7 +52,7 @@ const Timer = () => {
       }
 
       tick()
-    }, 10)
+    }, 1000)
 
     return () => clearInterval(interval)
   }, [controlsInfo])
